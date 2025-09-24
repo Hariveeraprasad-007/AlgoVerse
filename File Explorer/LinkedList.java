@@ -24,4 +24,25 @@ class LinkedList{
         }
         temp.next=newnode;
     }
+    public void deleteFile(String filename){
+        FileNode temp=head;
+        if(head==null){
+            System.out.println("There are no files in the directory");
+            return;
+        }
+        if(head.filename.equals(filename)){
+            head=head.next;
+            System.out.println("The file is deleted succesfully");
+            return;
+        }
+        while(temp.next!=null){
+            if(temp.next.filename.equals(filename)){
+                temp.next=temp.next.next
+                System.out.println("The file is deleted succesfully");
+                return;
+            }
+            temp=temp.next;
+        }
+        System.out.println("The file is not found");
+    }
 }

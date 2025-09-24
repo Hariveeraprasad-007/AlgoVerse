@@ -15,3 +15,19 @@ class FileManager:
         while(temp_node.next):
             temp=temp.next
         temp.next=new_node
+    def delete_file(self,filename):
+        if self.head is None:
+            print("No files are there to delete")
+            return
+        if self.head.filename==filename:
+            self.head=self.head.next
+            print("file deleted succesfully")
+            return
+        temp=self.head
+        while(temp.next):
+            if temp.next.filename==filename:
+                temp=temp.next.next
+                print("File deleted succesfully")
+                return
+            temp=temp.next
+        print("File not found")
