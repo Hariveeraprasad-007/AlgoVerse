@@ -45,4 +45,16 @@ class LinkedList{
         }
         System.out.println("The file is not found");
     }
+    public void update_file(String old_filename,String new_filename){
+        FileNode temp=head;
+        while(temp){
+            if(temp.filename.equals(old_filename)){
+                temp.filename=new_filename;
+                System.out.println("File name is updated");
+                return;
+            }
+            temp=temp.next;
+        }
+        System.out.println("File is not found");
+    }
 }

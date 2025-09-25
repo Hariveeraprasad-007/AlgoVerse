@@ -31,3 +31,12 @@ class FileManager:
                 return
             temp=temp.next
         print("File not found")
+    def update_file(self,oldfilename,newfilename):
+        temp=self.head
+        while(temp):
+            if(temp.filename==oldfilename):
+                temp.filename=newfilename
+                print("File name is updated succesfully")
+                return 
+            temp=temp.next
+        print("file is not found")
