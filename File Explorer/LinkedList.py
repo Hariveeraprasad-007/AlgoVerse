@@ -40,3 +40,11 @@ class FileManager:
                 return 
             temp=temp.next
         print("file is not found")
+    def display_files(self):
+        if(self.head is None):
+            print("No files are there")
+        temp=self.head
+        while(temp):
+            print("File name:",temp.filename," File size:",temp.filesize)
+            temp=temp.next
+        

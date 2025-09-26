@@ -37,7 +37,7 @@ class LinkedList{
         }
         while(temp.next!=null){
             if(temp.next.filename.equals(filename)){
-                temp.next=temp.next.next
+                temp.next=temp.next.next;
                 System.out.println("The file is deleted succesfully");
                 return;
             }
@@ -47,7 +47,7 @@ class LinkedList{
     }
     public void update_file(String old_filename,String new_filename){
         FileNode temp=head;
-        while(temp){
+        while(temp != null){
             if(temp.filename.equals(old_filename)){
                 temp.filename=new_filename;
                 System.out.println("File name is updated");
@@ -56,5 +56,17 @@ class LinkedList{
             temp=temp.next;
         }
         System.out.println("File is not found");
+    }
+    public void displayFiles(){
+        if(head==null){
+            System.out.println("There are no files");
+            return;
+        }
+        FileNode temp=head;
+        while(temp!=null){
+            System.out.println("FileName: "+temp.filename+" File Size: "+temp.Filesize);
+            temp=temp.next;
+        }
+
     }
 }
